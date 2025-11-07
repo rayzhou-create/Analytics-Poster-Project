@@ -14,7 +14,7 @@ data_latest<-data_specific %>%
   mutate(wealth.how.industry = recode(wealth.how.industry,
                                       "Constrution" = "Construction"))%>%
    mutate(demographics.gender = recode(demographics.gender,
-                                      "Married couple" = "Construction"))%>%  
+                                      "Married couple" = "Unknown"))%>%  
 mutate(company.relationship=recode(company.relationship,"relation"="Relation",
                                      "vice-chairman"="Vice Chairman","vice chairman"="Vice Chairman"
                                      ,"investor "="investor","ceo"="CEO","lawer"="lawyer"
