@@ -7,14 +7,15 @@ library(ggplot2)
 data_specific <- moneyball %>%
   select(name,year,wealth.worth.in.billions,wealth.how.industry,
          location.region,location.citizenship,company.relationship,demographics.gender,wealth.type)
-#use data from latest year:2014
+#use data from latest year
 data_latest<-data_specific %>%
   group_by(name)%>%
   filter(year==max(year)) %>%
   mutate(wealth.how.industry = recode(wealth.how.industry,
                                       "Constrution" = "Construction"))%>%
-  
-  mutate(company.relationship=recode(company.relationship,"relation"="Relation",
+   mutate(.how.industry = recode(wealth.how.industry,
+                                      "Constrution" = "Construction"))%>%  
+mutate(company.relationship=recode(company.relationship,"relation"="Relation",
                                      "vice-chairman"="Vice Chairman","vice chairman"="Vice Chairman"
                                      ,"investor "="investor","ceo"="CEO","lawer"="lawyer"
                                      ,"chairman"="Chairman", "chariman"="Chairman"
