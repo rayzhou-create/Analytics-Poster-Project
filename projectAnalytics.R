@@ -13,8 +13,8 @@ data_latest<-data_specific %>%
   filter(year==max(year)) %>%
   mutate(wealth.how.industry = recode(wealth.how.industry,
                                       "Constrution" = "Construction"))%>%
-   mutate(.how.industry = recode(wealth.how.industry,
-                                      "Constrution" = "Construction"))%>%  
+   mutate(demographics.gender = recode(demographics.gender,
+                                      "Married couple" = "Construction"))%>%  
 mutate(company.relationship=recode(company.relationship,"relation"="Relation",
                                      "vice-chairman"="Vice Chairman","vice chairman"="Vice Chairman"
                                      ,"investor "="investor","ceo"="CEO","lawer"="lawyer"
