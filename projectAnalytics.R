@@ -7,7 +7,7 @@ library(ggplot2)
 data_specific <- moneyball %>%
   select(name,year,wealth.worth.in.billions,wealth.how.industry,
          location.region,location.citizenship,company.relationship,demographics.gender,wealth.type)
-#use data from latest year:2014
+#use data from latest year for each billionaire
 data_latest<-data_specific %>%
   group_by(name)%>%
   filter(year==max(year)) %>%
@@ -41,9 +41,7 @@ freq_industry<-data_latest %>%
   count()%>%
   rename('Frequency' = n,'Industry Type'= wealth.how.industry )
 print(freq_industry)
-data_latest %>%
-  count(wealth.how.industry,demographics.gender)%>%
-  tidyr::pivot_wider(names_from = demographics.gender, values_from = n, values_fill = 0)
+
 freq_sex<-data_latest%>%
   group_by(demographics.gender)%>%
   count()%>%
