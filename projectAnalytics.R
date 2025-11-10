@@ -1040,5 +1040,5 @@ summary(model)
 
 # Final model
 model <- lm(wealth.worth.in.billions~wealth.how.industry +demographics.gender+wealth.type+location.region+company.relationship , data = data_latest)
-summary(model)#Make a table of frequencies
+summary(model)
 
